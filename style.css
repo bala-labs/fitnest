@@ -16,7 +16,7 @@ header {
     overflow: hidden;
     background-color: #333;
     color: white;
-    padding: 15px;
+    padding: 1.5rem;
     text-align: center;
     display: flex;
     justify-content: space-between;
@@ -24,7 +24,6 @@ header {
 }
 
 header h1 {
-    padding: 18px 20px;
     cursor: pointer;
 }
 
@@ -32,7 +31,7 @@ nav {
     display: flex;
     align-items: center;
     flex-direction: row;
-    gap: 30px;
+    gap: 1rem;
 }
 
 a {
@@ -116,7 +115,8 @@ button:hover {
 
 .slide-track {
     display: flex;
-    animation: slider 15s infinite;
+    animation: slider 15s infinite alternate;
+    transition: animation 1s ease-in-out;
 }
 
 .slide {
@@ -134,25 +134,17 @@ button:hover {
 @keyframes slider {
     0% {
         transform: translateX(0);
-    } 20% {
+    } 35% {
         transform: translateX(0);
-    } 23% {
+    } 40% {
         transform: translateX(-100%);
-    } 43% {
+    } 75% {
         transform: translateX(-100%);
-    } 46% {
+    } 80% {
         transform: translateX(-200%);
-    } 66% {
-        transform: translateX(-200%);
-    } 69% {
-        transform: translateX(-100%);
-    } 89% { 
-        transform: translate(-100%);
-    } 92% {
-        transform: translateX(0);
     } 100% {
-        transform: translateX(0);
-    }
+        transform: translateX(-200%);
+    } 
 }
 
 /* services.html */
