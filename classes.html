@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GYM Classes</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>FitNest GYM</h1>
+            <nav>
+                <a class="nav-item" href="index.html">Home</a>
+                <a class="nav-item" href="services.html">Services</a>
+                <a class="nav-item" href="about.html">About Us</a>
+                <a class="nav-item" href="contact.html">Contact Us</a>
+            </nav>
+        </header>
+
+        <main>
+            <img class="bg-img" src="https://imgs.search.brave.com/TmlTTjKIS2Lf1WaLd2S2B1LdDNfdrR0U77RBNs-w8ZU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA4Lzg2LzY3LzQx/LzM2MF9GXzg4NjY3/NDEyOF85Z21hU0RV/WktqTklLa2tLcE55/WjJ4bjdjZmhvRm13/MC5qcGc" alt="FitNest">
+            <div class="container">
+                <div class="class-content">
+                    <section class="service">
+                        <select id="list-services">
+                            <option value="all" selected>All Services</option>
+                            <option value="gain">Gain Weight</option>
+                            <option value="loss">Loss Weight</option>
+                            <option value="personal">Personal Training</option>
+                            <option value="strength">Strength Training</option>
+                            <option value="diet">Diet Plan</option>
+                        </select>
+                        <h2>Our Classes</h2>
+                    </section>
+                    <section id="classes" class="classes"></section>
+                </div>
+            </div>
+
+            <button id="back-btn" class="back-btn" type="button">Back</button>
+        </main>
+
+        <footer><p>&copy; 2025 FitNest GYM. All rights reserved.</p></footer>
+        <script src="script.js"></script>
+    </body>
+</html>

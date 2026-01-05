@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Join</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>FitNest GYM</h1>
+            <nav>
+                <a class="nav-item" href="index.html">Home</a>
+                <a class="nav-item" href="services.html">Services</a>
+                <a class="nav-item" href="about.html">About Us</a>
+                <a class="nav-item" href="contact.html">Contact Us</a>
+            </nav>
+        </header>
+
+        <main>
+            <img class="bg-img" src="https://imgs.search.brave.com/a4sritPDGlHlvlzvdywZcN7FbZtQZ3zFHZn-u_yQPS0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDg4MzQw/MzcuanBn" alt="FitNest">
+            <div class="container">
+                <div class="join">
+                    <section class="join-content">
+                        <section class="join-banner">
+                            <h2>Join FitNest Gym Today</h2>
+                            <p>Start your fitness journey with us. No contracts. Cancel anytime.</p>
+                        </section>
+
+                        <section class="benefits">
+                            <h2>Why Join FitNest?</h2>
+                            <ul>
+                                <li>✅ 24/7 Gym Access</li>
+                                <li>✅ Free Personal Training Session</li>
+                                <li>✅ Unlimited Group Classes</li>
+                                <li>✅ Sauna & Locker Room Access</li>
+                                <li>✅ Flexible Membership Plans</li>
+                            </ul>
+                        </section>
+                    </section>
+                    <section class="reg-form">
+                        <h2>Join Here</h2>
+                        <form id="registration">
+                            <div class="form-section">
+                                <label>Name:</label>
+                                <input value="" type="text" id="name">
+                            </div>
+                            <div class="form-section">
+                                <label>Email:</label>
+                                <input value="" type="text" id="email">
+                            </div>
+                            <div class="form-section">
+                                <label>Services:</label>
+                                <select id="services">
+                                    <option value="" selected>Select a service</option>
+                                    <option value="gain-weight">Gain Weight</option>
+                                    <option value="loss-weight">Loss Weight</option>
+                                    <option value="personal-training">Personal Training</option>
+                                    <option value="strength-training">Strength Training</option>
+                                    <option value="diet-plan">Diet Plan</option>
+                                </select>
+                            </div>
+                            <div class="form-section">
+                                <label>Phone:</label>
+                                <input value="" type="tel" id="phone">
+                            </div>
+                            <div class="form-section">
+                                <label>City:</label>
+                                <input value="" type="text" id="city">
+                            </div>
+                            <div class="form-section reg-btn">
+                                <button type="submit">Submit</button>
+                            </div>
+                            <p id="message"></p>
+                        </form>
+                    </section>
+                </div>
+            </div>
+            <div id="notification" class="notification">
+                <div class="confirm-msg"><p class="para"></p></div>
+                <div class="confirm-btn"><button id="confirm">Okay</button></div>
+            </div>
+            <button id="back-btn" class="back-btn" type="button">Back</button>
+        </main>
+
+        <footer><p>&copy; 2025 FitNest GYM. All rights reserved.</p></footer>
+        <script src="script.js"></script>
+    </body>
+</html>
