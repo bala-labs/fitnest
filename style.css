@@ -46,6 +46,7 @@ a:hover {
 
 main {
     position: relative;
+    max-height: 80vh;
 }
 
 footer {
@@ -71,8 +72,6 @@ footer {
     background-color: rgba(0, 0, 0, 0.685);
     overflow: hidden;
     color: white;
-    /* display: flex;
-    align-items: center; */
     position: absolute;
     left: 0;
     top: 0;
@@ -114,8 +113,8 @@ button:hover {
 }
 
 .slide-container {
-    position: relative;
-    height: 80vh;
+    /* position: relative; */
+    max-height: 80vh;
     overflow: hidden;
 }
 
@@ -203,9 +202,8 @@ button:hover {
     position: relative;
     width: 100%;
     object-fit: cover;
-    height: 100%;
     image-rendering: auto;
-    height: 80vh;
+    max-height: 80vh;
 }
 
 .about-content {
@@ -387,23 +385,28 @@ select {
 .class-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 1em;
+    gap: 1rem;
+    padding: 1rem;
     font-size: 1rem;
 }
 
-.service {
+.class-content h2 {
+    text-align: center;
+}
+
+/* .service {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 5em;
-}
+} */
 
 .service select {
+    position: absolute;
     background-color: rgb(243, 238, 238);
     border: 1px solid rgb(166, 161, 161);
     width: 10%;
-    padding: 2px;
+    top: 2%;
 }
 
 .classes ul {
@@ -418,7 +421,6 @@ select {
     background-color: rgb(213, 206, 206);
     color: black;
     list-style: none;
-    /* height: 18vh; */
     border-radius: 10px;
     padding: 1rem;
     display: flex;
@@ -460,3 +462,17 @@ select {
 .join-link:hover {
     color: black;
 }
+
+/* @media(min-width:600px){
+    .slide-container {
+        height: 100vh;
+    }
+
+    .slide-img {
+        height: 100%;
+    }
+}
+
+@media(min-width:950px){
+    
+} */
