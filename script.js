@@ -1,4 +1,3 @@
-const backBtn = document.getElementById('back-btn');
 const serviceList = document.getElementById("list-services");
 const registerForm = document.getElementById("registration");
 
@@ -78,10 +77,6 @@ const services = {
 document.addEventListener("DOMContentLoaded", function(e) {
     e.preventDefault();
 
-    if (backBtn) {
-        backBtn.addEventListener('click', function() {window.location.href = 'index.html'});
-    }
-
     if (registerForm) {
         registerForm.addEventListener("submit", function(e) {
             e.preventDefault();
@@ -94,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
             let message = document.getElementById("message");
             message.style.color = "red";
             message.style.fontWeight = "bold";
+            message.parentElement.style.visibility = "visible";
 
             if (!name || !email || !service || !phone || !city) {
                 message.textContent = "All Fields are required.";

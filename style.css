@@ -113,7 +113,6 @@ button:hover {
 }
 
 .slide-container {
-    /* position: relative; */
     max-height: 80vh;
     overflow: hidden;
 }
@@ -154,48 +153,44 @@ button:hover {
 
 /* services.html */
 .services-page {
-    padding: 30px 20px;
-}
-
-.services-page h2 {
+    padding: 1rem 2rem;
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .services {
+    overflow: auto;
+    height: 80vh;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 25px;
-    height: 65vh;
-    padding: 15px 0;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.services::-webkit-scrollbar {
+    display: none;
 }
 
 .service-item {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    padding: 0px 25px;
-    gap: 20px;
-}
-
-.service-item p {
-    text-align: justify;
+    flex-direction: row;
+    gap: 2rem;
 }
 
 .service-img {
-    width: 80%;
-    height: 25%;
-    border-radius: 10px;
+    width: 30vw;
+    max-height: 40vh;
 }
 
-.divider {
-    width: 3px;
-    height: 100%;
-    background-color: #333;
-}
+.service-content {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 1rem;
+    line-height: 1.6;
+} 
 
 /* about.html */
 .bg-img {
@@ -224,29 +219,27 @@ button:hover {
 /* contact.html */
 .contact-content {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10rem;
+    justify-content: space-between;
+    padding: 3rem 10rem;
     font-size: 1.2rem;
     width: 100%;
-    align-items: center;
     height: 100%;
 }
 
 .list-content {
-    margin-left: 50px;
+    margin-left: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 20px 0;
+    gap: 1rem;
+    padding: 2rem 0;
 }
 
 .list-content p {
     align-items: center;
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    padding: 5px;
+    gap: 1rem;
+    padding: 0.5rem;
 }
 
 .map-section {
@@ -258,26 +251,24 @@ button:hover {
 /* join.html */
 .join {
     display: flex;
-    flex-direction: row;
-    gap: 15%;
-    padding: 5% 15%;
-    font-size: 17px;
+    justify-content: space-between;
+    padding: 5rem 10rem;
 }
 
 .join-content {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 2rem;
 }
 
 .join-banner, .benefits, .benefits ul {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2rem;
 }
 
 .benefits ul, .join-banner p {
-    margin-left: 30px;
+    margin-left: 2rem;
 }
 
 .benefits ul li {
@@ -285,45 +276,44 @@ button:hover {
 }
 
 .reg-form {
-    padding: 0px 50px;
-    width: 350px;
-    overflow: hidden;
-}
-
-.reg-form h2, .reg-form p {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    padding: 20px 0;
-    gap: 25px;
+    gap: 1.5rem;
+    max-width: 30vw;
 }
 
 .form-section {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
 }
 
 label {
-    width: 25%;
+    flex: 1;
 }
 
 form input, select {
-    height: 25px;
-    border-radius: 5px;
+    flex: 2;
+    height: 2rem;
+    border-radius: 8px;
     border: 2px solid #757474;
-    margin: 5px 0;
     background: rgb(213, 207, 207);
-    padding: 2px 5px;
+}
+
+form input {
+    padding: 0.5rem 0.2rem;
 }
 
 select {
-    height: 32px;
-    width: 100%;
+    height: 2.3rem;
+    width: 15vw;
 }
 
 .reg-btn {
@@ -332,9 +322,13 @@ select {
 }
 
 .reg-btn button {
-    margin: 10px;
-    padding: 8px 15px;
-    width: 30%;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.message {
+    width: 100%;
+    text-align: center;
 }
 
 .notification {
@@ -394,13 +388,6 @@ select {
     text-align: center;
 }
 
-/* .service {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5em;
-} */
-
 .service select {
     position: absolute;
     background-color: rgb(243, 238, 238);
@@ -409,9 +396,18 @@ select {
     top: 2%;
 }
 
+.classes {
+    overflow: auto;
+    height: 70vh;
+}
+
+.classes::-webkit-scrollbar {
+    display: none;
+}
+
 .classes ul {
     display: grid;
-    grid-template-columns: repeat(4, 4fr);
+    grid-template-columns: repeat(autofill, minmax(280px, 1fr));
     grid-gap: 2rem;
     padding: 0 1.5rem;
 }
@@ -463,16 +459,65 @@ select {
     color: black;
 }
 
-/* @media(min-width:600px){
-    .slide-container {
-        height: 100vh;
+@media(min-width: 40px) {
+
+    .slide-container, .slide, .bg-img {
+        min-height: 80vh;
     }
 
-    .slide-img {
-        height: 100%;
+    .about-content {
+        overflow: auto;
+        font-size: 1rem;
+    }
+
+    .contact-content {
+        padding: 5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .join {
+        padding: 5rem 2rem;
+    }
+
+    select {
+        width: 2vw;
+    }
+
+    .classes ul {
+        font-size: 0.8rem;
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
+        overflow: auto;
+    }
+
+    .service select {
+        width: 20%;
     }
 }
 
-@media(min-width:950px){
-    
-} */
+@media(min-width: 950px) {
+    .about-content {
+        font-size: 1.2rem;
+    }
+
+    .contact-content {
+        padding: 5rem 10rem;
+        font-size: 1.2rem;
+    }
+
+    .join {
+        padding: 5rem 10rem;
+    }
+
+    select {
+        width: 15vw;
+    }
+
+    .classes ul {
+        grid-template-columns: repeat(4, minmax(280px, 1fr));
+        font-size: 1rem;
+    }
+
+    .service select {
+        width: 10%;
+    }
+}
