@@ -8,19 +8,25 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #e0dcdc;
-    overflow: hidden;
+    position: relative;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 header {
-    position: relative;
-    overflow: hidden;
+    position: fixed;
     background-color: #333;
     color: white;
     padding: 1.5rem;
-    text-align: center;
     display: flex;
     justify-content: space-between;
-    z-index: 10;
+    align-items: center;
+    z-index: 1;
+    height: 10vh;
+    width: 100vw;
+    top: 0;
 }
 
 header h1 {
@@ -46,7 +52,7 @@ a:hover {
 
 main {
     position: relative;
-    max-height: 80vh;
+    margin-top: 10vh;
 }
 
 footer {
@@ -55,12 +61,9 @@ footer {
     align-items: center;
     background-color: #333;
     color: white;
-    bottom: 0;
-    left: 0;
-    height: 10vh;
     width: 100%;
     font-size: 1.3rem;
-    z-index: 10;
+    padding: 1rem;
     font-weight: bold;
 }
 
@@ -70,7 +73,6 @@ footer {
 
 .container {
     background-color: rgba(0, 0, 0, 0.685);
-    overflow: hidden;
     color: white;
     position: absolute;
     left: 0;
@@ -93,14 +95,6 @@ button:hover {
     background-color: rgb(12, 4, 175);
 }
 
-.back-btn {
-    position: absolute;
-    bottom: 8%;
-    right: 0;
-    width: 75px;
-    margin: 10px;
-}
-
 /* index.html */
 .home-content {
     display: flex;
@@ -113,7 +107,6 @@ button:hover {
 }
 
 .slide-container {
-    max-height: 80vh;
     overflow: hidden;
 }
 
@@ -152,8 +145,7 @@ button:hover {
 }
 
 /* services.html */
-.services-page {
-    padding: 1rem 2rem;
+.page {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,14 +155,9 @@ button:hover {
 
 .services {
     overflow: auto;
-    height: 80vh;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-}
-
-.services::-webkit-scrollbar {
-    display: none;
 }
 
 .service-item {
@@ -181,7 +168,8 @@ button:hover {
 
 .service-img {
     width: 30vw;
-    max-height: 40vh;
+    max-height: 50vh;
+    border-radius: 8px;
 }
 
 .service-content {
@@ -189,8 +177,8 @@ button:hover {
     flex-direction: column;
     text-align: justify;
     gap: 1rem;
-    line-height: 1.6;
-} 
+    line-height: 1.7;
+}
 
 /* about.html */
 .bg-img {
@@ -198,12 +186,14 @@ button:hover {
     width: 100%;
     object-fit: cover;
     image-rendering: auto;
-    max-height: 80vh;
 }
 
 .about-content {
-    padding: 3rem 2rem;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
     font-size: 1.2rem;
+    gap: 2rem;
 }
 
 .about-content h2 {
@@ -211,7 +201,7 @@ button:hover {
 }
 
 .about-content p {
-    padding: 1rem 3rem;
+    padding: 0 3rem;
     text-align: justify;
     line-height: 1.6;
 }
@@ -220,18 +210,13 @@ button:hover {
 .contact-content {
     display: flex;
     justify-content: space-between;
-    padding: 3rem 10rem;
     font-size: 1.2rem;
-    width: 100%;
-    height: 100%;
 }
 
 .list-content {
-    margin-left: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 2rem 0;
 }
 
 .list-content p {
@@ -239,20 +224,12 @@ button:hover {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    padding: 0.5rem;
-}
-
-.map-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
 /* join.html */
 .join {
     display: flex;
     justify-content: space-between;
-    padding: 5rem 10rem;
 }
 
 .join-content {
@@ -279,20 +256,20 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     max-width: 30vw;
 }
 
 .form-section {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 label {
@@ -311,18 +288,20 @@ form input {
     padding: 0.5rem 0.2rem;
 }
 
-select {
+form select {
     height: 2.3rem;
-    width: 15vw;
+    padding: 0.5rem 0.2rem;
 }
 
 .reg-btn {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .reg-btn button {
-    margin: 1rem;
+    /* margin: 1rem; */
+    width: 50%;
     padding: 0.5rem 1rem;
 }
 
@@ -394,6 +373,8 @@ select {
     border: 1px solid rgb(166, 161, 161);
     width: 10%;
     top: 2%;
+    padding: 0.5rem 0.3rem;
+    border-radius: 8px;
 }
 
 .classes {
@@ -419,10 +400,12 @@ select {
     list-style: none;
     border-radius: 10px;
     padding: 1rem;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    z-index: 1;
+    max-height: 17vh;
+    z-index: 0;
 }
 
 .classes ul li::after {
@@ -436,21 +419,35 @@ select {
     border-top: 70px solid transparent;
     border-left: 30px solid transparent;
     border-bottom-right-radius: 10px; 
-    z-index: -1;
+    z-index: 0;
 }
 
 .desc {
     text-align: justify;
     line-height: 1.4;
+    z-index: 0;
 }
 
 .schedule-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
+    width: 90%;
+    bottom: 5%;
+    z-index: 1;
+}
+
+.schedule-container h5 {
+    left: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 75%;
+    text-wrap: nowrap;
 }
 
 .join-link {
+    right: 0;
     font-size: 15px;
     color: white;
 }
@@ -459,10 +456,32 @@ select {
     color: black;
 }
 
-@media(min-width: 40px) {
+@media(min-width: 300px) {
+    .page {
+        padding: 0.5rem 1rem;;
+    }
 
-    .slide-container, .slide, .bg-img {
-        min-height: 80vh;
+    .slide, .bg-img {
+        min-height: 85vh;
+    }
+
+    .service-item {
+        flex-direction: column;
+        align-items: center;
+        font-size: 1rem;
+    }
+
+    .service-img {
+        order: 1;
+        min-width: 50vw;
+    }
+
+    .service-content {
+        order: 2;
+    }
+
+    .about {
+        padding: 1rem 0.7rem;
     }
 
     .about-content {
@@ -471,20 +490,24 @@ select {
     }
 
     .contact-content {
-        padding: 5rem 1rem;
+        padding: 3rem 1rem;
         font-size: 1rem;
+        gap: 2rem;
+    }
+
+    .list-content {
+        padding: 1rem 0.5rem;
     }
 
     .join {
         padding: 5rem 2rem;
-    }
+    } 
 
-    select {
+    .service select {
         width: 2vw;
     }
 
     .classes ul {
-        font-size: 0.8rem;
         grid-template-columns: repeat(2, minmax(280px, 1fr));
         overflow: auto;
     }
@@ -492,9 +515,43 @@ select {
     .service select {
         width: 20%;
     }
+
+    footer {
+        height: 5vh;
+    }
 }
 
 @media(min-width: 950px) {
+    .page {
+        padding: 2rem 5rem;
+    }
+
+    .slide, .bg-img {
+        max-height: 80vh;
+        min-height: 80vh;
+    }
+
+    .service-item {
+        flex-direction: row;
+        align-items: start;
+        gap: 3rem;
+    }
+
+    .service-img {
+        min-width: 25vw;
+        max-height: 40vh;
+        order: 0;
+    }
+
+    .service-content {
+        order: 0;
+        font-size: 1.1rem;
+    }
+
+    .about {
+        padding: 3rem;
+    }
+
     .about-content {
         font-size: 1.2rem;
     }
@@ -502,6 +559,10 @@ select {
     .contact-content {
         padding: 5rem 10rem;
         font-size: 1.2rem;
+    }
+
+    .list-content {
+        padding: 2rem;
     }
 
     .join {
@@ -514,10 +575,13 @@ select {
 
     .classes ul {
         grid-template-columns: repeat(4, minmax(280px, 1fr));
-        font-size: 1rem;
     }
 
     .service select {
         width: 10%;
+    }
+
+    footer {
+        height: 10vh;
     }
 }
