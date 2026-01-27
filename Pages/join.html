@@ -3,17 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <title>Join</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../Styles/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body>
         <header>
             <h1>FitNest GYM</h1>
-            <nav>
-                <a class="nav-item" href="index.html">Home</a>
+            <nav class="navbar">
+                <a class="nav-item" href="../index.html">Home</a>
                 <a class="nav-item" href="services.html">Services</a>
                 <a class="nav-item" href="about.html">About Us</a>
                 <a class="nav-item" href="contact.html">Contact Us</a>
             </nav>
+            <div class="navbutton">
+                <span id="hamburger-menu" class="fa fa-bars"></span>
+                <div class="options">
+                    <a class="nav-item" href="../index.html">Home</a>
+                    <a class="nav-item" href="services.html">Services</a>
+                    <a class="nav-item" href="about.html">About Us</a>
+                    <a class="nav-item" href="contact.html">Contact Us</a>
+                </div>
+            </div>
         </header>
 
         <main>
@@ -41,15 +51,15 @@
                         <h2>Join Here</h2>
                         <form id="registration">
                             <div class="form-section">
-                                <label>Name:</label>
-                                <input value="" type="text" id="name">
+                                <label for="name">Name:</label>
+                                <input value="" type="text" id="name" autocomplete="true">
                             </div>
                             <div class="form-section">
-                                <label>Email:</label>
-                                <input value="" type="text" id="email">
+                                <label for="email">Email:</label>
+                                <input value="" type="text" id="email" autocomplete="true">
                             </div>
                             <div class="form-section">
-                                <label>Services:</label>
+                                <label for="services">Services:</label>
                                 <select id="services">
                                     <option value="" selected>Select a service</option>
                                     <option value="gain-weight">Gain Weight</option>
@@ -60,12 +70,12 @@
                                 </select>
                             </div>
                             <div class="form-section">
-                                <label>Phone:</label>
-                                <input value="" type="tel" id="phone">
+                                <label for="phone">Phone:</label>
+                                <input value="" type="tel" id="phone" autocomplete="true">
                             </div>
                             <div class="form-section">
-                                <label>City:</label>
-                                <input value="" type="text" id="city">
+                                <label for="city">City:</label>
+                                <input value="" type="text" id="city" autocomplete="true">
                             </div>
                             <div class="form-section reg-btn">
                                 <button type="submit">Submit</button>
@@ -82,6 +92,6 @@
         </main>
 
         <footer><p>&copy; 2025 FitNest GYM. All rights reserved.</p></footer>
-        <script src="script.js"></script>
+        <script src="../Scripts/script.js"></script>
     </body>
 </html>

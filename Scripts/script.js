@@ -1,5 +1,6 @@
 const serviceList = document.getElementById("list-services");
 const registerForm = document.getElementById("registration");
+const menuBtn = document.getElementById("hamburger-menu");
 
 const services = {
     gain : [
@@ -178,6 +179,20 @@ document.addEventListener("DOMContentLoaded", function(e) {
             updateSelect();
         });
     }
+    
+    if (menuBtn) {
+        const options = document.querySelector('.options');
 
-    document.querySelector("header h1").addEventListener("click", function() {window.location.href = 'index.html'});
+        document.addEventListener('click', function(e) {
+            if (options.classList.contains('show') && !e.target.contains(options)) {
+                options.classList.remove('show');
+            }
+        });
+
+        menuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+
+            options.classList.add('show');
+        });
+    }
 });
