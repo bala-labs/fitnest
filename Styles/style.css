@@ -16,7 +16,7 @@ body::-webkit-scrollbar {
 }
 
 header {
-    position: fixed;
+    position: sticky;
     background-color: #333;
     color: white;
     padding: 1.5rem;
@@ -87,7 +87,7 @@ a:hover {
 
 main, .service-main {
     position: relative;
-    margin-top: 10vh;
+    /* margin-top: 10vh; */
 }
 
 footer {
@@ -547,7 +547,7 @@ form select {
     } 
 
     .classes ul {
-        grid-template-columns: repeat(2, minmax(280px, 1fr));
+        grid-template-columns: repeat(1, minmax(280px, 1fr));
         overflow: auto;
         font-size: 0.8rem;
     }
@@ -561,7 +561,21 @@ form select {
     }
 }
 
-@media(min-width: 950px) {
+@media(min-width: 678px) {
+    .classes ul {
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
+        font-size: 1rem;
+    }
+}
+
+@media(min-width: 970px) {
+    .classes ul {
+        grid-template-columns: repeat(3, minmax(280px, 1fr));
+        font-size: 1rem;
+    }
+}
+
+@media(min-width: 1300px) {
     .navbar {
         display: flex;
     }
