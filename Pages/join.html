@@ -50,18 +50,18 @@
                     </section>
                     <section class="reg-form">
                         <h2>Join Here</h2>
-                        <form id="registration">
+                        <form id="registration" action="http://localhost:3000/users" method="post">
                             <div class="form-section">
                                 <label for="name">Name:</label>
-                                <input value="" type="text" id="name" autocomplete="true">
+                                <input name="name" value="" type="text" id="name" autocomplete="true">
                             </div>
                             <div class="form-section">
                                 <label for="email">Email:</label>
-                                <input value="" type="text" id="email" autocomplete="true">
+                                <input name="email" value="" type="text" id="email" autocomplete="true">
                             </div>
                             <div class="form-section">
                                 <label for="services">Services:</label>
-                                <select id="services">
+                                <select name="service" id="services">
                                     <option value="" selected>Select a service</option>
                                     <option value="gain-weight">Gain Weight</option>
                                     <option value="loss-weight">Loss Weight</option>
@@ -72,11 +72,11 @@
                             </div>
                             <div class="form-section">
                                 <label for="phone">Phone:</label>
-                                <input value="" type="tel" id="phone" autocomplete="true">
+                                <input name="phone" value="" type="tel" id="phone" autocomplete="true">
                             </div>
                             <div class="form-section">
                                 <label for="city">City:</label>
-                                <input value="" type="text" id="city" autocomplete="true">
+                                <input name="city" value="" type="text" id="city" autocomplete="true">
                             </div>
                             <div class="form-section reg-btn">
                                 <button type="submit">Submit</button>

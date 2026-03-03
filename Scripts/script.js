@@ -82,45 +82,57 @@ document.addEventListener("DOMContentLoaded", function(e) {
         registerForm.addEventListener("submit", function(e) {
             e.preventDefault();
 
-            let name = document.getElementById("name").value.trim();
-            let email = document.getElementById("email").value.trim();
-            let service = document.getElementById("services").value;
-            let phone = document.getElementById("phone").value.trim();
-            let city = document.getElementById('city').value.trim();
+            const formData = new FormData(registerForm);
+            let Data = Object.fromEntries(
+                [...formData.entries()].map(([key, val]) => (
+                    [key, val.trim()]
+            )));
+
             let message = document.getElementById("message");
             message.style.color = "red";
             message.style.fontWeight = "bold";
             message.parentElement.style.visibility = "visible";
 
-            if (!name || !email || !service || !phone || !city) {
+            if (!Data.name || !Data.email || !Data.service || !Data.phone || !Data.city) {
                 message.textContent = "All Fields are required.";
                 return;
             }
 
-            if (/\d/.test(name)) {
+            if (/\d/.test(Data.name)) {
                 message.textContent = "Invalid user name.";
                 return;
             }
 
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
+            if (!emailRegex.test(Data.email)) {
                 message.textContent = "Invalid email address.";
                 return;
             }
 
-            if (isNaN(phone) || phone.length !== 10) {
+            if (isNaN(Data.phone) || Data.phone.length !== 10) {
                 message.textContent = "Invalid phone number.";
                 return;
             }
 
-            if (/\d/.test(city)) {
+            if (/\d/.test(Data.city)) {
                 message.textContent = "Invalid city name.";
                 return;
             }
 
+            fetch(registerForm.action, {
+                method: registerForm.method,
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({...Data, id: crypto.randomUUID()})
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
+            .catch (err => console.error("User data does not updated", err));
+
             let notify = document.getElementById("notification");
             notify.classList.add("active");
-            document.querySelector('.para').textContent = `${name}, your details have been accepted by our branch`;
+            document.querySelector('.para').textContent = `${Data.name}, Your details have been accepted by our team`;
 
             document.getElementById('confirm').addEventListener('click', function() {
                 notify.classList.remove("active");
