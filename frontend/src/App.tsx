@@ -18,6 +18,10 @@ function FitNestHeader() {
   })
 
   useEffect(() => {
+    fetch(`https://fitnest-ovpw.onrender.com/users`)
+  }, [])
+
+  useEffect(() => {
     document.documentElement.dataset.theme = theme
     localStorage.setItem('fitnest-theme', theme)
   }, [theme])

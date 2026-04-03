@@ -10,7 +10,7 @@ type JoinFormState = {
   city: string
 }
 
-const API_BASE_URL = 'http://localhost:8000'
+const API_BASE_URL = 'https://fitnest-ovpw.onrender.com'
 
 type JoinErrors = Partial<Record<keyof JoinFormState, string>> & { form?: string }
 
