@@ -1,5 +1,7 @@
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { useEffect, useMemo, useState } from 'react'
+import { Flame, Sun, Moon, MapPin, Phone, Mail } from 'lucide-react'
+import { LinkedInIcon, FacebookIcon, InstagramIcon } from './components/SocialIcons'
 import AboutPage from './pages/AboutPage'
 import ClassesPage from './pages/ClassesPage'
 import ContactPage from './pages/ContactPage'
@@ -43,7 +45,9 @@ function FitNestHeader() {
     <header className="appHeader">
       <div className="container headerInner">
         <Link className="brand" to="/" aria-label="FitNest Home">
-          <span className="brandDot" aria-hidden="true" />
+          <span className="brandMark" aria-hidden="true">
+            <Flame size={18} />
+          </span>
           FitNest
         </Link>
 
@@ -63,9 +67,18 @@ function FitNestHeader() {
           <button
             type="button"
             className="themeToggle"
+            aria-label="Toggle theme"
             onClick={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
           >
-            {theme === 'dark' ? 'Light' : 'Dark'}
+            {theme === 'dark' ? (
+              <>
+                <Sun size={14} /> Light
+              </>
+            ) : (
+              <>
+                <Moon size={14} /> Dark
+              </>
+            )}
           </button>
 
           <button
@@ -103,7 +116,9 @@ function FitNestFooter() {
       <div className="container footerInner">
         <div className="footerBrand">
           <div className="brand" style={{ fontSize: '1.1rem' }}>
-            <span className="brandDot" aria-hidden="true" />
+            <span className="brandMark" style={{ width: 28, height: 28, borderRadius: 8 }} aria-hidden="true">
+              <Flame size={15} />
+            </span>
             FitNest
           </div>
           <p className="footerTagline">
@@ -111,16 +126,16 @@ function FitNestFooter() {
           </p>
 
           <div className="footerSocial" aria-label="Social links">
-            <a className="socialBtn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-              <i className="fab fa-linkedin" aria-hidden="true" />
+            <a className="socialBtn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <LinkedInIcon size={15} />
               <span>LinkedIn</span>
             </a>
-            <a className="socialBtn" href="https://www.facebook.com/" target="_blank" rel="noreferrer">
-              <i className="fab fa-facebook" aria-hidden="true" />
+            <a className="socialBtn" href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">
+              <FacebookIcon size={15} />
               <span>Facebook</span>
             </a>
-            <a className="socialBtn" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-              <i className="fab fa-instagram" aria-hidden="true" />
+            <a className="socialBtn" href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <InstagramIcon size={15} />
               <span>Instagram</span>
             </a>
           </div>
@@ -129,17 +144,17 @@ function FitNestFooter() {
         <div className="footerCol">
           <div className="footerColTitle">Contact</div>
           <div className="footerRow">
-            <i className="fa fa-map-marker-alt" aria-hidden="true" />
+            <MapPin size={16} className="textAccent" style={{ flexShrink: 0 }} />
             <span>FitNest GYM, Anna Nagar, Chennai - 600040</span>
           </div>
           <div className="footerRow">
-            <i className="fa fa-phone" aria-hidden="true" />
+            <Phone size={16} className="textAccent" style={{ flexShrink: 0 }} />
             <a className="footerLink" href="tel:+919876543210">
               +91 98765 43210
             </a>
           </div>
           <div className="footerRow">
-            <i className="fa fa-envelope" aria-hidden="true" />
+            <Mail size={16} className="textAccent" style={{ flexShrink: 0 }} />
             <a className="footerLink" href="mailto:fitnest@gmail.com">
               fitnest@gmail.com
             </a>

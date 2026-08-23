@@ -1,9 +1,13 @@
+import { MapPin, Phone, Mail } from 'lucide-react'
+import { LinkedInIcon, FacebookIcon, InstagramIcon } from '../components/SocialIcons'
+
 export default function ContactPage() {
   return (
     <main className="section">
       <div className="container">
         <div className="sectionHeader">
-          <h2 className="sectionTitle">Contact Us</h2>
+          <span className="sectionEyebrow">Get In Touch</span>
+          <h1 className="sectionTitle">Contact Us</h1>
           <p className="sectionSub">Visit the gym, or reach out and we will help you start.</p>
         </div>
 
@@ -13,17 +17,17 @@ export default function ContactPage() {
             <div style={{ height: 12 }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               <div className="muted" style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontWeight: 850 }}>
-                <i className="fa fa-map-marker-alt" aria-hidden="true" style={{ marginTop: 3 }} />
+                <MapPin size={18} className="textAccent" style={{ marginTop: 2, flexShrink: 0 }} />
                 <span>FitNest GYM, Anna Nagar, Chennai - 600040</span>
               </div>
               <div className="muted" style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontWeight: 850 }}>
-                <i className="fa fa-phone" aria-hidden="true" style={{ marginTop: 3 }} />
+                <Phone size={18} className="textAccent" style={{ marginTop: 2, flexShrink: 0 }} />
                 <a href="tel:+919876543210" style={{ fontWeight: 900 }}>
                   +91 98765 43210
                 </a>
               </div>
               <div className="muted" style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontWeight: 850 }}>
-                <i className="fa fa-envelope" aria-hidden="true" style={{ marginTop: 3 }} />
+                <Mail size={18} className="textAccent" style={{ marginTop: 2, flexShrink: 0 }} />
                 <a href="mailto:fitnest@gmail.com" style={{ fontWeight: 900 }}>
                   fitnest@gmail.com
                 </a>
@@ -37,19 +41,19 @@ export default function ContactPage() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <div className="muted" style={{ display: 'flex', gap: 12, alignItems: 'center', fontWeight: 850 }}>
-                <i className="fab fa-linkedin" aria-hidden="true" />
+                <LinkedInIcon size={18} className="textAccent" />
                 <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
                   LinkedIn
                 </a>
               </div>
               <div className="muted" style={{ display: 'flex', gap: 12, alignItems: 'center', fontWeight: 850 }}>
-                <i className="fab fa-facebook" aria-hidden="true" />
+                <FacebookIcon size={18} className="textAccent" />
                 <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
                   Facebook
                 </a>
               </div>
               <div className="muted" style={{ display: 'flex', gap: 12, alignItems: 'center', fontWeight: 850 }}>
-                <i className="fab fa-instagram" aria-hidden="true" />
+                <InstagramIcon size={18} className="textAccent" />
                 <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
                   Instagram
                 </a>

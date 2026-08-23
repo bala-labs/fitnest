@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { MapPin, Star } from 'lucide-react'
 
 export default function HomePage() {
   return (
@@ -30,10 +31,18 @@ export default function HomePage() {
 
         <div className="heroContent">
           <div className="container heroInner">
-            <h1 className="heroTitle">Welcome to FitNest</h1>
+            <div className="heroBadge">
+              <MapPin size={13} style={{ color: 'var(--accent)' }} />
+              Anna Nagar, Chennai
+            </div>
+
+            <h1 className="heroTitle">
+              Welcome to{' '}
+              <span className="heroAccent">FitNest</span>
+            </h1>
             <p className="heroText">
               Your personal fitness sanctuary where strength, health, and community
-              come together.
+              come together. Train smarter, progress consistently, feel at home.
             </p>
             <div className="heroCtas">
               <Link to="/join" className="btn btnPrimary">
@@ -43,10 +52,26 @@ export default function HomePage() {
                 View Classes
               </Link>
             </div>
+
+            <div className="heroStats">
+              <div className="heroStat">
+                <span className="heroStatNum">500+</span>
+                <span className="heroStatLabel">Members</span>
+              </div>
+              <div className="heroStat">
+                <span className="heroStatNum">15+</span>
+                <span className="heroStatLabel">Programs</span>
+              </div>
+              <div className="heroStat">
+                <span className="heroStatNum" style={{ display: 'inline-flex', alignItems: 'center', gap: 2 }}>
+                  5<Star size={16} fill="currentColor" />
+                </span>
+                <span className="heroStatLabel">Rated</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </main>
   )
 }
-
