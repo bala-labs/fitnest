@@ -1,6 +1,7 @@
 import type { FormEvent } from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import FitNestLogo from '../components/FitNestLogo'
 
 type JoinFormState = {
   name: string
@@ -128,6 +129,7 @@ export default function JoinPage() {
           <section className="card" style={{ background: 'color-mix(in srgb, var(--card) 80%, transparent)' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div>
+                <FitNestLogo size={38} variant="full" showTagline style={{ marginBottom: 14 }} />
                 <h2 className="sectionTitle" style={{ marginBottom: 8 }}>
                   Join FitNest Gym Today
                 </h2>

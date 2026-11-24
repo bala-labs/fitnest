@@ -1,6 +1,7 @@
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { useEffect, useMemo, useState } from 'react'
-import { Flame, Sun, Moon, MapPin, Phone, Mail } from 'lucide-react'
+import { Sun, Moon, MapPin, Phone, Mail } from 'lucide-react'
+import FitNestLogo from './components/FitNestLogo'
 import { LinkedInIcon, FacebookIcon, InstagramIcon } from './components/SocialIcons'
 import AboutPage from './pages/AboutPage'
 import ClassesPage from './pages/ClassesPage'
@@ -45,10 +46,7 @@ function FitNestHeader() {
     <header className="appHeader">
       <div className="container headerInner">
         <Link className="brand" to="/" aria-label="FitNest Home">
-          <span className="brandMark" aria-hidden="true">
-            <Flame size={18} />
-          </span>
-          FitNest
+          <FitNestLogo size={36} variant="full" />
         </Link>
 
         <nav className="navLinks" aria-label="Primary">
@@ -98,7 +96,10 @@ function FitNestHeader() {
       </div>
 
       <div className={`mobileMenu${menuOpen ? ' open' : ''}`} aria-label="Mobile navigation">
-        <div className="container" style={{ padding: 0 }}>
+        <div className="container" style={{ padding: '0 0 1rem 0' }}>
+          <div style={{ padding: '0.75rem 0', borderBottom: '1px solid var(--border)', marginBottom: '0.75rem' }}>
+            <FitNestLogo size={32} variant="full" />
+          </div>
           {links.map((l) => (
             <Link key={l.to} to={l.to} onClick={() => setMenuOpen(false)}>
               {l.label}
@@ -115,12 +116,9 @@ function FitNestFooter() {
     <footer className="footer">
       <div className="container footerInner">
         <div className="footerBrand">
-          <div className="brand" style={{ fontSize: '1.1rem' }}>
-            <span className="brandMark" style={{ width: 28, height: 28, borderRadius: 8 }} aria-hidden="true">
-              <Flame size={15} />
-            </span>
-            FitNest
-          </div>
+          <Link to="/" className="brand" aria-label="FitNest Home" style={{ textDecoration: 'none' }}>
+            <FitNestLogo size={32} variant="full" showTagline />
+          </Link>
           <p className="footerTagline">
             Train smarter. Progress consistently. Feel at home.
           </p>

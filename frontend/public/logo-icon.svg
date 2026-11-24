@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="fnBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b18" />
+      <stop offset="50%" stop-color="#121110" />
+      <stop offset="100%" stop-color="#080707" />
+    </linearGradient>
+
+    <!-- Border Glow Gradient -->
+    <linearGradient id="fnBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7300" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#ff3d00" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ff9100" stop-opacity="0.6" />
+    </linearGradient>
+
+    <!-- Primary Flame / Wing Gradient -->
+    <linearGradient id="fnFlameGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffb703" />
+      <stop offset="35%" stop-color="#fb8500" />
+      <stop offset="70%" stop-color="#f75c03" />
+      <stop offset="100%" stop-color="#d90429" />
+    </linearGradient>
+
+    <!-- Nest Cradle Gradient -->
+    <linearGradient id="fnNestGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="45%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fdba74" />
+    </linearGradient>
+
+    <!-- Inner Core Ember Highlight -->
+    <linearGradient id="fnCoreGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#ffe6a7" />
+      <stop offset="100%" stop-color="#ff9f1c" />
+    </linearGradient>
+
+    <!-- Glow Filter for Ambient Vitality -->
+    <filter id="fnGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Subtle Drop Shadow for Badge Depth -->
+    <filter id="fnShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#f97316" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Base with Glow -->
+  <rect x="5" y="5" width="90" height="90" rx="24" fill="url(#fnBg)" stroke="url(#fnBorder)" stroke-width="1.75" filter="url(#fnShadow)" />
+
+  <!-- Ambient Internal Hearth Glow -->
+  <circle cx="50" cy="55" r="28" fill="#f97316" opacity="0.14" filter="blur(8px)" />
+
+  <!-- FitNest Emblem Group -->
+  <g id="emblem" transform="translate(0, 0)">
+    <!-- 1. The Nest Cradle & Right Wing (Embracing Sanctuary / "N" foundation) -->
+    <path d="M 23 55
+             C 23 68, 33 79, 49 79
+             C 65 79, 75 70, 77 55
+             C 78 47, 75 41, 71 37
+             C 70 36, 68 37, 68 39
+             C 70 45, 69 55, 62 64
+             C 56 71, 47 72, 38 68
+             C 31 64, 28 58, 27 52
+             C 27 50, 24 50, 23 55 Z"
+          fill="url(#fnNestGrad)" />
+
+    <!-- 2. The Dynamic Athletic "F" Crest & Wing (Rising Strength) -->
+    <path d="M 27 50
+             C 27 38, 33 27, 44 20
+             C 45 19, 47 21, 46 23
+             C 41 30, 39 38, 41 46
+             C 42 49, 45 50, 48 49
+             L 57 46
+             C 59 45, 60 47, 59 49
+             L 51 54
+             C 47 56, 43 56, 39 55
+             C 33 53, 29 48, 27 50 Z"
+          fill="url(#fnFlameGrad)" />
+
+    <!-- 3. Central Ascending Flame & Dumbbell Geometry (The Core Spark of Vitality) -->
+    <path d="M 48 66
+             C 47 62, 45 56, 46 48
+             C 47 38, 55 27, 53 17
+             C 53 16, 54 16, 55 17
+             C 61 24, 66 34, 64 45
+             C 63 52, 59 58, 55 63
+             C 53 65, 50 67, 48 66 Z"
+          fill="url(#fnFlameGrad)" />
+
+    <!-- 4. Inner Radiant Core Spark (Light & Focus) -->
+    <path d="M 50 56
+             C 49 52, 49 46, 52 40
+             C 52.5 39, 53.5 39, 54 40
+             C 56 44, 56 49, 54 54
+             C 53 56, 51 57, 50 56 Z"
+          fill="url(#fnCoreGrad)" />
+
+    <!-- 5. Athletic Accent Dot (Focus & Community) -->
+    <circle cx="53" cy="22" r="2.2" fill="#ffe6a7" />
+  </g>
+</svg>

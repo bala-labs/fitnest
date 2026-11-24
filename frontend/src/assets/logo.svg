@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <!-- Background Gradient for Icon -->
+    <linearGradient id="logoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b18" />
+      <stop offset="50%" stop-color="#121110" />
+      <stop offset="100%" stop-color="#080707" />
+    </linearGradient>
+
+    <!-- Border Glow Gradient -->
+    <linearGradient id="logoBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7300" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#ff3d00" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ff9100" stop-opacity="0.6" />
+    </linearGradient>
+
+    <!-- Flame / Wing Gradient -->
+    <linearGradient id="logoFlame" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffb703" />
+      <stop offset="35%" stop-color="#fb8500" />
+      <stop offset="70%" stop-color="#f75c03" />
+      <stop offset="100%" stop-color="#d90429" />
+    </linearGradient>
+
+    <!-- Nest Cradle Gradient -->
+    <linearGradient id="logoNest" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="45%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fdba74" />
+    </linearGradient>
+
+    <!-- Core Ember Gradient -->
+    <linearGradient id="logoCore" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#ffe6a7" />
+      <stop offset="100%" stop-color="#ff9f1c" />
+    </linearGradient>
+
+    <!-- Wordmark Gradient for "Nest" -->
+    <linearGradient id="logoWordGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fb923c" />
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow -->
+    <filter id="logoShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#f97316" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Left Icon Mark -->
+  <g transform="translate(6, 6)">
+    <!-- Icon Squircle -->
+    <rect x="0" y="0" width="48" height="48" rx="13" fill="url(#logoBg)" stroke="url(#logoBorder)" stroke-width="1.2" filter="url(#logoShadow)" />
+
+    <!-- Icon Graphic (Scaled) -->
+    <g transform="translate(2, 2) scale(0.44)">
+      <!-- Nest Cradle -->
+      <path d="M 23 55
+               C 23 68, 33 79, 49 79
+               C 65 79, 75 70, 77 55
+               C 78 47, 75 41, 71 37
+               C 70 36, 68 37, 68 39
+               C 70 45, 69 55, 62 64
+               C 56 71, 47 72, 38 68
+               C 31 64, 28 58, 27 52
+               C 27 50, 24 50, 23 55 Z"
+            fill="url(#logoNest)" />
+
+      <!-- F Wing Crest -->
+      <path d="M 27 50
+               C 27 38, 33 27, 44 20
+               C 45 19, 47 21, 46 23
+               C 41 30, 39 38, 41 46
+               C 42 49, 45 50, 48 49
+               L 57 46
+               C 59 45, 60 47, 59 49
+               L 51 54
+               C 47 56, 43 56, 39 55
+               C 33 53, 29 48, 27 50 Z"
+            fill="url(#logoFlame)" />
+
+      <!-- Central Flame -->
+      <path d="M 48 66
+               C 47 62, 45 56, 46 48
+               C 47 38, 55 27, 53 17
+               C 53 16, 54 16, 55 17
+               C 61 24, 66 34, 64 45
+               C 63 52, 59 58, 55 63
+               C 53 65, 50 67, 48 66 Z"
+            fill="url(#logoFlame)" />
+
+      <!-- Core Spark -->
+      <path d="M 50 56
+               C 49 52, 49 46, 52 40
+               C 52.5 39, 53.5 39, 54 40
+               C 56 44, 56 49, 54 54
+               C 53 56, 51 57, 50 56 Z"
+            fill="url(#logoCore)" />
+
+      <!-- Spark dot -->
+      <circle cx="53" cy="22" r="2.5" fill="#ffe6a7" />
+    </g>
+  </g>
+
+  <!-- Typography: FitNest Lockup -->
+  <g transform="translate(66, 35)">
+    <!-- "Fit" -->
+    <text x="0" y="0" font-family="'Outfit', 'Inter', -apple-system, sans-serif" font-size="28" font-weight="900" letter-spacing="-0.03em" fill="currentColor">Fit</text>
+    
+    <!-- "Nest" -->
+    <text x="42" y="0" font-family="'Outfit', 'Inter', -apple-system, sans-serif" font-size="28" font-weight="900" letter-spacing="-0.03em" fill="url(#logoWordGrad)">Nest</text>
+    
+    <!-- Tagline -->
+    <text x="1" y="14" font-family="'Inter', -apple-system, sans-serif" font-size="8" font-weight="700" letter-spacing="0.22em" fill="#f97316" opacity="0.9">TRAIN SMARTER • FEEL AT HOME</text>
+  </g>
+</svg>
